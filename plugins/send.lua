@@ -88,11 +88,11 @@ return {
     "!send dev : Envía una foto del desarrollador"
   },
   patterns = {
-  "^[!/.i#*](send) (.*) (.*) (.*)$",
-  "^[!/.i#*](send) (.*) (.*)$",
-  "^[!/*#i.](send) (.*)$",
-  "^[!#.i*/](list) (files)$",
-  "^[!.#i*/](extensions)$"
+  "^[!/](send) (.*) (.*) (.*)$",
+  "^[!/](send) (.*) (.*)$",
+  "^[!/](send) (.*)$",
+  "^[!/](list) (files)$",
+  "^[!/](extensions)$"
   },
   run = run
 }
