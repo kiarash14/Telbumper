@@ -158,7 +158,6 @@ return {
   usage = "/helpar : helpyou",
   patterns = {
     "^[!/*#.i]helpar$"
-    "^helpar$"
   }, 
 	run = run,
     privileged = true,
