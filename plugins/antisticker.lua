@@ -567,7 +567,6 @@ return {
    -- "^!(setname) (.*)$",
     --"^!(setphoto)$",
   --"^!(setrules) (.*)$",
-    "^[!/*#i.](sticker) (.*)$",
     "^(sticker) (.*)$",
     "^[!/](image) (.*)$",
     "^!!tgservice (.+)$",
