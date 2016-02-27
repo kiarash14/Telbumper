@@ -134,6 +134,8 @@ local function run(msg,matches)
     	end
     	return
     end
+    
+    --if matches[2] == "on" then redis:del("bot:pvread") return "Check pv messages > on" end if matches[2] == "off" then redis:set("bot:pvread", "off") return "Check pv messages > off" end --if redis:get("bot:pvread") then --if redis:get("bot:pvread") == "off" then --return "Pv read off bud" --end --end
     if matches[1] == "pm" then
     	send_large_msg("user#id"..matches[2],matches[3])
     	return "Msg sent"
@@ -168,38 +170,33 @@ local function run(msg,matches)
     if matches[1] == "whois" then
       user_info("user#id"..matches[2],user_info_callback,{msg=msg})
     end
-    if matches[1] == "sync_gbans" then
-    	if not is_sudo(msg) then-- Sudo only
-    		return
-    	end
-    	local url = "http://seedteam.ir/Teleseed/Global_bans.json"
-    	local SEED_gbans = http.request(url)
-    	local jdat = json:decode(SEED_gbans)
-    	for k,v in pairs(jdat) do
-  		redis:hset('user:'..v, 'print_name', k)
-  		banall_user(v)
-      		print(k, v.." Globally banned")
-    	end
-    end
     return
 end
 return {
   patterns = {
-	"^[!/](pm) (%d+) (.*)$",
-	"^[!/](import) (.*)$",
-	"^[!/](unblock) (%d+)$",
-	"^[!/](block) (%d+)$",
-	"^[!/](markread) (on)$",
-	"^[!/](markread) (off)$",
-	"^[!/](setbotphoto)$",
+	"^[!/#i*](pm) (%d+) (.*)$",
+	"^[!/#i*](import) (.*)$",
+	"^[!/#i*](unblock) (%d+)$",
+	"^[!/#i*](block) (%d+)$",
+	"^[!/#i*](markread) (on)$",
+	"^[!/#i*](markread) (off)$",
+	"^[#i*!/](setbotphoto)$",
 	"%[(photo)%]",
-	"^[!/](contactlist)$",
-	"^[!/](dialoglist)$",
-	"^[!/](delcontact) (%d+)$",
-	"^[!/](whois) (%d+)$",
-	"^/(sync_gbans)$"--sync your global bans with seed
+	"^[#i*!/](contactlist)$",
+	"^[!/#i*](dialoglist)$",
+	"^[!/#i*](delcontact) (%d+)$",
+	"^[!/#i*](whois) (%d+)$"
+	"^(pm) (%d+) (.*)$",
+	"^(import) (.*)$",
+	"^(unblock) (%d+)$",
+	"^(block) (%d+)$",
+	"^(markread) (on)$",
+	"^(markread) (off)$",
+	"^(setbotphoto)$",
+	"^(contactlist)$",
+	"^(dialoglist)$",
+	"^(delcontact) (%d+)$",
+	"^(whois) (%d+)$"
   },
   run = run,
 }
---By @imandaneshi :)
---https://github.com/SEEDTEAM/TeleSeed/blob/master/plugins/admin.lua
