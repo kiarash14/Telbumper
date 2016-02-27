@@ -186,17 +186,6 @@ return {
 	"^[!/#i*](dialoglist)$",
 	"^[!/#i*](delcontact) (%d+)$",
 	"^[!/#i*](whois) (%d+)$"
-	"^(pm) (%d+) (.*)$",
-	"^(import) (.*)$",
-	"^(unblock) (%d+)$",
-	"^(block) (%d+)$",
-	"^(markread) (on)$",
-	"^(markread) (off)$",
-	"^(setbotphoto)$",
-	"^(contactlist)$",
-	"^(dialoglist)$",
-	"^(delcontact) (%d+)$",
-	"^(whois) (%d+)$"
   },
   run = run,
 }
