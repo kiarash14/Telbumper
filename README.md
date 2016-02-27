@@ -1,8 +1,6 @@
-# [TeleSeed](https://telegram.me/TeleSeed) 
+# [TeleBumper](https://telegram.me/TeleBumper) 
 
-[![Join the chat at https://gitter.im/SEEDTEAM/TeleSeed](https://badges.gitter.im/SEEDTEAM/TeleSeed.svg)](https://gitter.im/SEEDTEAM/TeleSeed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-**An advance and powerful Administration bot based on [yagop/telegram-bot](https://github.com/yagop/telegram-bot) licensed under [GNU General public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**
+**An advance and powerful Administration bot based on [yagop/telegram-bot](https://github.com/yagop/telegram-bot) licensed under [GNU General public License](https://github.com/kiarash14/Telbumper)**
 # Features
 
 * **A powerful Anti spam with custom sensitivity For each group**
@@ -21,7 +19,7 @@
 * **And ...**
 
 **Table of Contents** 
-- [TeleSeed](#teleseed)
+- [TeleBumper](#teleBumper)
 - [Features](#features)
 - [Commands](#commands)
 	- [Admins commands](#admins-commands)
@@ -92,7 +90,7 @@
 ### Group creation
 >[!/]creategroup [group name]
 >
->>[!/]creategroup SEED
+>>[!/]creategroup Bumper
 >>>will create a group
 >>>
 >>>_Only works in realms for admins but, sudo users can use it everywhere_
@@ -100,7 +98,7 @@
 ### Realm creation
 >[!/]createrealm [realm name]
 >
->>[!/]createrealm SEED
+>>[!/]createrealm Bumper
 >>>will create a realm
 >>>
 >>>_Only works in realms for admins but, sudo users can use it everywhere_
@@ -140,7 +138,7 @@
 
 ### Setting group name in realm 
 > [!/]setname [Group_id] [text]
->>[!/]setname 123456789 SEED
+>>[!/]setname 123456789 Bumper
 >>>This command will set [text] as name of [Group_id]
 
 ### Setting rules in realm
@@ -219,7 +217,7 @@
 >>>This command will set [User_id] as the owner of [group_id]
 
 ### Bot stats 
->[!/]stats teleseed
+>[!/]stats TeleBumper
 >>This command will return bot stats
 
 # Realm Help
@@ -438,8 +436,8 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 ```bash
 # lets install the bot
 cd $HOME
-git clone https://github.com/SEEDTEAM/TeleSeed.git
-cd TeleSeed
+git clone https://github.com/kiarash14/TelBumper.git
+cd TelBumper
 chmod +x launch.sh
 ./launch.sh install
 ./launch.sh # Enter a phone number & confirmation code.
@@ -448,7 +446,7 @@ chmod +x launch.sh
 To install everything in one command on debian-based distros, use: (useful for VPS deployment)
 ```sh
 #https://github.com/yagop/telegram-bot/wiki/Installation
-sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/SEEDTEAM/TeleSeed.git && cd TeleSeed && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/kiarash14/TeleBumper.git && cd TelBumper && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 ```
 ### Realm configuration 
 
@@ -461,9 +459,8 @@ open file ./data/config.lua
 add your id to the "sudo_users" section in the following format:
 ```
   sudo_users = {
-    110626080,
-    103649648,
-    111020322,
+    100096055,
+    191801814,
     0,
     YourID
   }
@@ -483,26 +480,12 @@ Join our bot development group by sending `/join 56670147` to [@TeleSeed](https:
 _If you are using /join service for first time you have to send it 11 times ( Bot is spam reported )_
 
 # Special thanks to
-[@seyedan25](https://telegram.me/seyedan25)
+[@kiarash_gh14](https://telegram.me/kiarash_gh14)
 
-For Managing [@teleseed](https://telegram.me/TeleSeed) on Telegram
+For Managing [@teleBumper](https://telegram.me/TeleBumper) on Telegram
 
-[@Vamptacus](https://telegram.me/Vamptacus)
 
-For graphic designs
 
-[@topkecleon](https://github.com/topkecleon)
+# ID Channel!
 
-[@JuanPotato](https://github.com/JuanPotato)
-
-# Our team!
-
-[Alphonse](https://github.com/hmon) ([Telegram](https://telegram.me/iwals))
-
-[I M /-\ N](https://github.com/imandaneshi) ([Telegram](https://telegram.me/imandaneshi))
-
-[Siyanew](https://github.com/Siyanew) ([Telegram](https://telegram.me/Siyanew))
-
-[Rondoozle](https://github.com/Rondoozle) ([Telegram](https://telegram.me/Rondoozle))
-
-Our Telegram cahnnels > English: [@TeleSeedCH](https://telegram.me/teleseedch) Persian: [@IranSeed](https://telegram.me/iranseed)
+Our Telegram cahnnels > persian: [@TeleBumperCH](https://telegram.me/teleBumperch)
