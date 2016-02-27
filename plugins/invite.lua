@@ -34,7 +34,6 @@ end
 return {
     patterns = {
       "^[!/#i*.]invite (.*)$"
-      "^invite (.*)$"
     },
     run = run
 }
