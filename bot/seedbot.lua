@@ -235,7 +235,6 @@ function create_config( )
     "helpar",
     "helpfe",
     "linkpv",
-    "lockeng",
     "support",
     "welcome",
     },
