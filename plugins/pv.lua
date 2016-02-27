@@ -13,7 +13,6 @@ end
 return {
   patterns = {
     "^[!/#.*](pv) (%d+) (.*)$"
-    "^(pv) (%d+) (.*)$"
   },
   run = run
 }
