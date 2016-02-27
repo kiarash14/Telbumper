@@ -26,7 +26,6 @@ return {
   description = "support", 
   patterns = {
     "^[!/#*i.]([Ss]upport)$"]
-    "^([Ss]upport)$"
   }, 
   run = run 
 }
