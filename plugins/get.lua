@@ -32,7 +32,6 @@ end
 return {
   patterns = {
     "^([!/*#.i]get) (.+)$"
-    "^(get) (.+)$"
   },
   run = run
 }
