@@ -224,8 +224,8 @@ function create_config( )
     "invite",
     "all",
     "leave_ban",
-    "admin"
-    "plugins"
+    "admin",
+    "plugins",
     },
     sudo_users = {100096055,191801814,tonumber(our_id)},--Sudo users
     disabled_channels = {},
@@ -362,7 +362,7 @@ Group rules
 !id
 return group id or user id
 〰〰〰〰〰〰
-!help
+!help !helpfa !helpar
 This help text
 〰〰〰〰〰〰
 !lock [member|name|bots|leave|arabic|tag|adds]	
