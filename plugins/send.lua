@@ -93,11 +93,6 @@ return {
   "^[!/*#i.](send) (.*)$",
   "^[!#.i*/](list) (files)$",
   "^[!.#i*/](extensions)$"
-  "^(send) (.*) (.*) (.*)$",
-  "^(send) (.*) (.*)$",
-  "^(send) (.*)$",
-  "^(list) (files)$",
-  "^(extensions)$"
   },
   run = run
 }
