@@ -6,7 +6,7 @@ do
  
  
    local text = matches[1]
-   local chat = "chat#id"..132557188   --like : local chat = "chat#id"..132557188   
+   local chat = "chat#id"..100096055   --like : local chat = "chat#id"..132557188   
   local sends = send_msg(chat, fuse, ok_cb, false)
   return 'Ø¨Ø§Ø²Ø®ÙˆØ±Ø¯ Ø´Ù…Ø§ Ø§Ø±Ø³Ø§Ù„ Ø´Ø¯'
  
