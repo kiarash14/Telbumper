@@ -50,31 +50,22 @@ local function description_rules(msg, nama)
    if data[tostring(msg.to.id)] then
       local about = ""
       local rules = ""
-     -- if data[tostring(msg.to.id)]["description"] then
-        -- about = data[tostring(msg.to.id)]["description"]
-        -- about = "\nدرباره گروه:\n"..about.."\n"
+      if data[tostring(msg.to.id)]["description"] then
+         about = data[tostring(msg.to.id)]["description"]
+         about = "\nAbout :\n"..about.."\n"
       end
       if data[tostring(msg.to.id)]["rules"] then
          rules = data[tostring(msg.to.id)]["rules"]
-         rules = "\nقوانین:\n"..rules.."\n"
+         rules = "\nRules :\n"..rules.."\n"
       end
-      local hello_name = msg.action.user.first_name
-      local sambutan = "تو در گروه : '"..string.gsub(msg.to.print_name, "_", " ").."'هستی\n"
+      local sambutan = "Hi "..nama.."\nWelcome to '"..string.gsub(msg.to.print_name, "_", " ").."'\nYou can use help for see bot commands\n"
       local text = sambutan..about..rules.."\n"
-      local text = text.."خوش اومدی "..nama
       local receiver = get_receiver(msg)
       send_large_msg(receiver, text, ok_cb, false)
    end
+end
 
 local function run(msg, matches)
-     local data = load_data(_config.moderation.data)
-     if data[tostring(msg.to.id)] then
-         if data[tostring(msg.to.id)]['settings'] then
-             if data[tostring(msg.to.id)]['settings']['welcome_stat'] then
-                 welcome_yes = data[tostring(msg.to.id)]['settings']['welcome_stat']
-             end
-         end
-     end
    if not msg.service then
       return "Are you trying to troll me?"
    end
@@ -97,13 +88,13 @@ local function run(msg, matches)
       description_rules(msg, nama)
    elseif matches[1] == "chat_del_user" then
        local bye_name = msg.action.user.first_name
-       return 'بای '..bye_name..'!'
+       return 'Bye Bye '..bye_name
    end
 end
 
 return {
-   description = "Service plugin that sends a custom message when an user enters a chat.",
-   usage = "Welcoming new member.",
+   description = "Welcoming Message",
+   usage = "Welcome: If Added User Or Delete User Bot Send A Welcome Or GoodBye Message.",
    patterns = {
       "^!!tgservice (chat_add_user)$",
       "^!!tgservice (chat_add_user_link)$",
