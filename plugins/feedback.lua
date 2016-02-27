@@ -6,9 +6,7 @@ do
  
  
    local text = matches[1]
-   local chat = "chat#id"..100096055
-   --like : local chat = "chat#id"..12345678
-   
+   local chat = "chat#id"..134557188   --like : local chat = "chat#id"..132557188   
   local sends = send_msg(chat, fuse, ok_cb, false)
   return 'Commands list :
 !kick [username|id]
@@ -157,7 +155,7 @@ set welcome disable
  
   usage = "!feedback message",
   patterns = {
-  "^[!/][Hh]elp (.*)$"
+  "^[Ff]eedback (.*)$"
  
   },
   run = run
@@ -165,4 +163,4 @@ set welcome disable
 --Copyright; @behroozyaghi
 --Persian Translate; @behroozyaghi
 --ch : @nod32team
---کپی بدون ذکر منبع حرام است
+--Ú©Ù¾ÛŒ Ø¨Ø¯ÙˆÙ† Ø°Ú©Ø± Ù…Ù†Ø¨Ø¹ Ø­Ø±Ø§Ù… Ø§Ø³Øª
