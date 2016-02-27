@@ -122,7 +122,7 @@ end
 local function run(msg, matches)
  if matches[1]:lower() == 'id' then
     if msg.to.type == "user" then
-      return "Bot ID: "..msg.to.id.. "\n\nYour ID: "..msg.from.id
+      return "Bot ID: "..msg.to.id.. "\n\nFirst Name: "..(msg.from.first_name or 'No firstname').."\n".."Last Name: " ..(msg.from.last_name or 'No Last Name').."\n".."username: @"..(msg.from.username or 'No Username').."\n".."ID: " .. msg.from.id
     end
     if type(msg.reply_id) ~= "nil" then
       local name = user_print_name(msg.from)
@@ -131,7 +131,7 @@ local function run(msg, matches)
     elseif matches[1]:lower() == 'id' then
       local name = user_print_name(msg.from)
       savelog(msg.to.id, name.." ["..msg.from.id.."] used /id ")
-      return "Group ID for " ..string.gsub(msg.to.print_name, "_", " ").. ":\n\n"..msg.to.id  
+      return "Group ID :"..msg.to.id.. "\nGroup Name :" ..string.gsub(msg.to.print_name, "_", " ").. "\n\nFirst Name: "..(msg.from.first_name or 'No firstname').."\n".."Last Name: " ..(msg.from.last_name or 'No Last Name').."\n".."username: @"..(msg.from.username or 'No Username').."\n".."ID: " .. msg.from.id
     end
   end
   if matches[1]:lower() == 'kickme' then-- /kickme
@@ -253,6 +253,64 @@ if matches[1]:lower() == 'kick' then
 end
 
 
+
+
+
+
+
+
+
+
+if matches[1]:lower() == 'sick' then
+    if type(msg.reply_id)~="nil" and is_momod(msg) then
+      if is_admin(msg) then
+        local msgr = get_message(msg.reply_id,Kick_by_reply_admins, false)
+      else
+        msgr = get_message(msg.reply_id,Kick_by_reply, false)
+      end
+    end
+
+	if string.match(matches[2], '^%d+$') then
+		if tonumber(matches[2]) == tonumber(our_id) then 
+			return
+		end
+		if not is_admin(msg) and is_momod2(matches[2], msg.to.id) then
+			return "you can't kick mods/owner/admins"
+		end
+		if tonumber(matches[2]) == tonumber(msg.from.id) then
+			return "You can't kick your self !"
+		end
+      		local user_id = matches[2]
+      		local chat_id = msg.to.id
+		name = user_print_name(msg.from)
+		savelog(msg.to.id, name.." ["..msg.from.id.."] kicked user ".. matches[2])
+		kick_user(user_id, chat_id)
+	else
+		local cbres_extra = {
+			chat_id = msg.to.id,
+			get_cmd = 'kick',
+			from_id = msg.from.id
+		}
+		local username = matches[2]
+		local username = string.gsub(matches[2], '@', '')
+		res_user(username, kick_ban_res, cbres_extra)
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   if not is_admin(msg) then
     return
   end
@@ -308,24 +366,41 @@ end
 
 return {
   patterns = {
-    "^[!/]([Bb]anall) (.*)$",
-    "^[!/]([Bb]anall)$",
-    "^[!/]([Bb]anlist) (.*)$",
-    "^[!/]([Bb]anlist)$",
-    "^[!/]([Gg]banlist)$",
-    "^[!/]([Bb]an) (.*)$",
-    "^[!/]([Kk]ick)$",
-    "^[!/]([Uu]nban) (.*)$",
-    "^[!/]([Uu]nbanall) (.*)$",
-    "^[!/]([Uu]nbanall)$",
-    "^[!/]([Kk]ick) (.*)$",
-    "^[!/]([Kk]ickme)$",
-    "^[!/]([Bb]an)$",
-    "^[!/]([Uu]nban)$",
-    "^[!/]([Ii]d)$",
+    "^[!/#*i.]([Bb]anall) (.*)$",
+    "^[!/#*i.]([Bb]anall)$",
+    "^[!/#*i.]([Bb]anlist) (.*)$",
+    "^[!/#*i.]([Bb]anlist)$",
+    "^[!/#*i.]([Gg]banlist)$",
+    "^[!/#*i.]([Bb]an) (.*)$",
+    "^[!/#*i.]([Kk]ick)$",
+    "^[!/#*i.]([Uu]nban) (.*)$",
+    "^[!/#*i.]([Uu]nbanall) (.*)$",
+    "^[!/#*i.]([Uu]nbanall)$",
+    "^[!/#*i.]([Kk]ick) (.*)$",
+    "^[!/#*i.]([Ss]ick) (.*)$",
+    "^[!/#*i.]([Kk]ickme)$",
+    "^[!/#*i.]([Bb]an)$",
+    "^[!/#*i.]([Uu]nban)$",
+    "^[!/#*i.]([Ii]d)$",
+    "^([Bb]anall) (.*)$",
+    "^([Bb]anall)$",
+    "^([Bb]anlist) (.*)$",
+    "^([Bb]anlist)$",
+    "^([Gg]banlist)$",
+    "^([Bb]an) (.*)$",
+    "^([Kk]ick)$",
+    "^([Uu]nban) (.*)$",
+    "^([Uu]nbanall) (.*)$",
+    "^([Uu]nbanall)$",
+    "^([Kk]ick) (.*)$",
+    "^([Ss]ick) (.*)$",
+    "^([Kk]ickme)$",
+    "^([Bb]an)$",
+    "^([Uu]nban)$",
+    "^([Ii]d)$",
+    
     "^!!tgservice (.+)$"
   },
   run = run,
   pre_process = pre_process
 }
-
