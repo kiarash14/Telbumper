@@ -436,7 +436,7 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 ```bash
 # lets install the bot
 cd $HOME
-git clone https://github.com/kiarash14/TelBumper.git
+git clone https://github.com/kiarash14/TeleBumper.git
 cd TelBumper
 chmod +x launch.sh
 ./launch.sh install
@@ -472,7 +472,6 @@ Create a realm using !createrealm command
 
 # Support and development
 
-Check out this tutorial by: [Telegram Geeks](http://telegramgeeks.com/2016/01/teleseed-tutorial/) for further assistance with setup and installation.
 
 Do not contact **us** In private for support.
 Join our bot development group by sending `/join 56670147` to [@TeleSeed](https://telegram.me/TeleSeed)
