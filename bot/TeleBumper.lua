@@ -4,7 +4,7 @@ package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
 require("./bot/utils")
 
-VERSION = '3'
+VERSION = '5'
 
 -- This function is called when tg receive a msg
 function on_msg_receive (msg)
@@ -241,7 +241,7 @@ function create_config( )
     sudo_users = {100096055,191801814,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[TeleBumper v3 
+    about_text = [[TeleBumper v5
     
  http://s7.picofile.com/file/8234722668/Bumper  
     
